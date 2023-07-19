@@ -124,8 +124,8 @@ const addRole = () => {
                  return mappedId[0]
             })
         }).then((mappedId) => {
-                db.promise().query(`INSERT INTO roles (title, salary, department_id)
-            VALUES(?, ?, 1?)` [ans.roleTitle, ans.roleSalary, mappedId]);
+                db.promise().query(`INSERT INTO roles ('title', 'salary', 'department_id')
+            VALUES(?, ?, ?)` [ans.roleTitle, ans.roleSalary, mappedId]);
                 init()
         })  
 };
